@@ -1,7 +1,14 @@
-<div class="jumbo">
-  <div class="right tomster"></div>
+<Jumbo>
   <h2>You choose starships!</h2>
   <p>This will be an epic game!</p>
-</div>
+</Jumbo>
 
+
+<div class="rentals">
+  <ul class="results">
+    {{#each @model as |data|}}
+      <li><Card @data={{data}}/></li>
+    {{/each}}
+  </ul>
+</div>
 {{outlet}}
