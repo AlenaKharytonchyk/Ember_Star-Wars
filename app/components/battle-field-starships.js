@@ -4,32 +4,33 @@ import { tracked } from '@glimmer/tracking';
 import { action } from "@ember/object";
 
 export default class BattleFieldStarshipsComponent extends Component {
-  @service starshipsService;
+  @service startshipsService;
   @tracked data;
   @tracked userScore;
   @tracked computerScore;
 
   constructor(...args) {
     super(...args);
-    this.starshipsService.getRandomCard()
+    this.startshipsService.getRandomCard()
       .then(data => this.calculatedScore(data));
     }
   @action changePlayers() {
-    this.starshipsService.getRandomCard()
+    this.startshipsService.getRandomCard()
       .then(data => this.calculatedScore(data));
   }
   calculatedScore(data) {
     this.data = data;
-    if(data.resultPlayer.crew > data.resultComputer.crew) {
-      this.starshipsService.userScore += 1;
+
+    if(data.resultComputer.crew === 'unknown'){
+      this.startshipsService.userScore +=1;
+    } else if(data.resultPlayer.crew === 'unknown'){
+      this.startshipsService.computerScore +=1;
+    } else if(data.resultPlayer.crew > data.resultComputer.crew) {
+      this.startshipsService.userScore += 1;
     } else if(data.resultPlayer.crew < data.resultComputer.crew) {
-      this.starshipsService.computerScore += 1;
-    } else if(data.resultComputer.crew === 'undefined'){
-      this.peopleService.computerScore +=1;
-    } else if(data.resultPlayer.crew === 'undefined'){
-      this.peopleService.userScore +=1;
+      this.startshipsService.computerScore += 1;
     }
-    this.userScore = this.starshipsService.userScore;
-    this.computerScore = this.starshipsService.computerScore;
+    this.userScore = this.startshipsService.userScore;
+    this.computerScore = this.startshipsService.computerScore;
   }
 }

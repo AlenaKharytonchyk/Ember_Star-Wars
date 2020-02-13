@@ -58,6 +58,7 @@
     "edition": "octane"
   },
   "dependencies": {
+    "fetch-mock": "^9.0.0-beta.2",
     "swapi-wrapper": "^1.0.0"
   }
 }

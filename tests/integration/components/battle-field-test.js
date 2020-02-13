@@ -6,21 +6,14 @@ import { hbs } from 'ember-cli-htmlbars';
 module('Integration | Component | battle-field', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+  test('it renders a people battle card', async function(assert) {
 
-    await render(hbs`<BattleField />`);
+    await render(hbs`<BattleFieldStarships />`);
 
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      <BattleField>
-        template block text
-      </BattleField>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.dom('section').hasClass('score');
+    assert.dom('h4').exists({count: 2});
+    assert.dom('ul').hasClass('results');
+    assert.dom('.player-card div').isVisible();
+    assert.dom('.computer-card div').isVisible();
   });
 });

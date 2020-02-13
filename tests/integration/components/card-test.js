@@ -20,6 +20,5 @@ module('Integration | Component | card', function(hooks) {
     assert.dom('img').hasClass('card-img-top');
     assert.dom('h5.card-title').includesText('Luke Skywalker');
     assert.dom('p.card-text').includesText('mass: 77');
-    assert.dom('div a').includesText('Take it!');
   });
 });
