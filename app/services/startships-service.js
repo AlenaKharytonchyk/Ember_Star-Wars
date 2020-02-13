@@ -1,10 +1,10 @@
 import Service from '@ember/service';
 
-export default class PeopleServiceService extends Service {
+export default class StartshipsServiceService extends Service {
   userScore = 0;
   computerScore = 0;
   async getRandomCard() {
-    const url = 'https://swapi.co/api/people/';
+    const url = 'https://swapi.co/api/starships/';
     let response = await fetch(url);
     let { count } = await response.json();
     let random = () => {
