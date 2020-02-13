@@ -121,6 +121,17 @@ p {
   bottom: 5px;
 }
 
+.score {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px 0;
+}
+
+.rentals, .battle-button {
+  display: flex;
+  justify-content: center;
+}
+
 .rentals label span {
   font-size: 140%;
   margin: 50px auto 20px;

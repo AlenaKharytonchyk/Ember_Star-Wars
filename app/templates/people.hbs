@@ -3,11 +3,5 @@
   <p>This will be an epic game!</p>
 </Jumbo>
 
-<div class="rentals">
-  <ul class="results">
-    {{#each @model as |data|}}
-      <li><Card @data={{data}}/></li>
-    {{/each}}
-  </ul>
-</div>
+<BattleField></BattleField>
 {{outlet}}
