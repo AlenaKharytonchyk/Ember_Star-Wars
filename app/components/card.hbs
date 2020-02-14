@@ -1,0 +1,13 @@
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="assets/images/logo.png" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Name: {{@data.name}}</h5>
+    <p class="card-text">
+      {{#if @data.mass}}
+        mass: {{@data.mass}}
+      {{else}}
+        crew: {{@data.crew}}
+      {{/if}}
+    </p>
+  </div>
+</div>
