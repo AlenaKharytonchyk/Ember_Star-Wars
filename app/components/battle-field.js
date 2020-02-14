@@ -29,6 +29,9 @@ export default class BattleFieldComponent extends Component {
       this.peopleService.userScore +=1;
     } else if(data.resultPlayer.mass < data.resultComputer.mass) {
       this.peopleService.computerScore +=1;
+    } else  if (data.resultPlayer.mass === data.resultComputer.mass) {
+      this.peopleService.userScore += 0;
+      this.peopleService.computerScore += 0;
     }
     this.userScore = this.peopleService.userScore;
     this.computerScore = this.peopleService.computerScore;

@@ -29,6 +29,9 @@ export default class BattleFieldStarshipsComponent extends Component {
       this.startshipsService.userScore += 1;
     } else if(data.resultPlayer.crew < data.resultComputer.crew) {
       this.startshipsService.computerScore += 1;
+    } else  if (data.resultPlayer.crew === data.resultComputer.crew) {
+      this.startshipsService.userScore += 0;
+      this.startshipsService.computerScore += 0;
     }
     this.userScore = this.startshipsService.userScore;
     this.computerScore = this.startshipsService.computerScore;

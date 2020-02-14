@@ -16,6 +16,9 @@ export default class StartshipsServiceService extends Service {
     let promiseComputer = fetch(`${url}${random()}/`).then( response => response.json());
 
     let [resultPlayer, resultComputer] = await Promise.all([promisePlayer, promiseComputer]);
+    if(!resultPlayer.name || !resultComputer.name){
+      alert('Oops! No information about on one of the ships! Just play again!');
+    }
     return { resultPlayer, resultComputer };
   }
 }
